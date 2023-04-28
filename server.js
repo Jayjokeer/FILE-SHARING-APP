@@ -4,7 +4,7 @@ const port = process.env.PORT || 5000
 const morgan = require('morgan')
 const app = express()
 const path = require('path')
-const session = require('express-session')
+
 
 
 //middlewares
@@ -13,11 +13,7 @@ app.use(morgan('dev'))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 require('./db')
-app.use(session({
- resave:false,   
- secret:process.env.SESSION_KEY,
- saveUninitialized:false
-}))
+
 
 
 //view engine
