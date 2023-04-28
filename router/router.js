@@ -30,6 +30,7 @@ const fileController = async(req,res)=>{
 
    const newFile = await filedb.create(fileData)
    console.log(newFile)
+   
    res.render('index',{fileLink :`${req.headers.origin}/file/${newFile.id}`})
     
 }
@@ -45,7 +46,7 @@ const handleDownload=async(req,res)=>{
     }
     foundFile.downloadcount++
     await foundFile.save()
-
+    
     res.download(foundFile.path,foundFile.originalName,{success:true})
     console.log(foundFile.downloadcount)
 }
