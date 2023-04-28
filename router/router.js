@@ -29,7 +29,7 @@ const fileController = async(req,res)=>{
     }
 
    const newFile = await filedb.create(fileData)
-   console.log(newFile)
+   //console.log(newFile)
    
    res.render('index',{fileLink :`${req.headers.origin}/file/${newFile.id}`})
     
@@ -48,7 +48,7 @@ const handleDownload=async(req,res)=>{
     await foundFile.save()
     
     res.download(foundFile.path,foundFile.originalName,{success:true})
-    console.log(foundFile.downloadcount)
+    //console.log(foundFile.downloadcount)
 }
 //posting the new file
 router.post('/upload',upload.single('file'),fileController,async(req,res)=>{
