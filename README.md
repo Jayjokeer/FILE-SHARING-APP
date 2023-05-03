@@ -2,6 +2,8 @@
 A Node.js file sharing application that allows users to upload,set password for the file , download and share file with others.
 The application provides a web-based interface that can be access through the web browser.
 
+Application URL: https://flash-file.onrender.com
+
 Getting started
 . Node.js v10 or later installed on your machine.
 . MongoDB installed and running.
